@@ -1,0 +1,347 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>CampusMart</title>
+    <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
+</head>
+<body>
+    <!-- Header -->
+    <header class="header">
+        <div class="container">
+            <nav class="nav">
+                <div class="logo">
+                    <div class="logo-icon">🛒</div>
+                    <div class="logo-text">
+                        <h1>CampusMart</h1>
+                        <p>Student Marketplace</p>
+                    </div>
+                </div>
+                <div class="nav-buttons">
+                    <button class="nav-btn" onclick="setActiveTab('buy')">
+                        🛍️ Buy
+                    </button>
+                    <button class="nav-btn active" onclick="setActiveTab('assignment')">
+                        📝 Assignment
+                    </button>
+                    <button class="nav-btn" onclick="setActiveTab('sell')">
+                        💰 Sell
+                    </button>
+                </div>
+            </nav>
+        </div>
+    </header>
+
+    <!-- Hero Section -->
+    <section class="hero">
+        <div class="container">
+            <div class="hero-content">
+                <div class="hero-image">
+                    <div class="hero-people"></div>
+                    <img src="https://cbx-prod.b-cdn.net/COLOURBOX51691003.jpg?width=800&height=800&quality=70" alt="image">
+                    <button class="create-assignment-btn" onclick="createAssignment()">
+                        CREATE ASSIGNMENT →
+                    </button>
+                </div>
+                <div class="deals-sidebar">
+                    <div class="deals-header">
+                        <h3>Grab New Deals</h3>
+                        <span class="hot-badge">🔥 Hot</span>
+                    </div>
+                    <div class="deal-item">
+                        <div class="deal-icon">📄</div>
+                        <div class="deal-info">
+                            <h4>Practical Files</h4>
+                            <p>Up to 50% OFF</p>
+                        </div>
+                    </div>
+                    <div class="deal-item">
+                        <div class="deal-icon">🏆</div>
+                        <div class="deal-info">
+                            <h4>Akash PYQ</h4>
+                            <p>Up to 70% OFF</p>
+                        </div>
+                    </div>
+                    <div class="deal-item">
+                        <div class="deal-icon">📊</div>
+                        <div class="deal-info">
+                            <h4>Drafter</h4>
+                            <p>Up to 40% OFF</p>
+                        </div>
+                    </div>
+                    <button class="view-deals-btn" onclick="viewAllDeals()"><i class="fa-solid fa-eye" aria-hidden="true"></i> View All Deals</button>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Products Section -->
+    <section class="products-section">
+        <div class="container">
+            <div class="section-header">
+                <h1>Trending Products</h1>
+                <h5>Discover the most popular items from students in your campus</h5>
+            </div>
+    
+            <div class="products-grid">
+                <div class="product-card">
+                    <div class="product-image">
+                        <img src="https://imgv2-1-f.scribdassets.com/img/document/755565478/original/90f7a27eb9/1?v=1" alt="Product Image 1">
+                        <span class="discount-badge">-17%</span>
+                        <span class="featured-badge">FEATURED BOOKS</span>
+                    </div>
+                    <div class="product-info">
+                        <h3>Akash Solved Papers</h3>
+                        <p class="category">BOOKS</p>
+                        <div class="rating">⭐⭐⭐⭐⭐</div>
+                        <div class="price-info">
+                            <span class="current-price">₹250</span>
+                            <span class="original-price">₹300</span>
+                            <button class="buy-now-btn" onclick="buyNow()">BUY NOW</button>
+                        </div>
+                    </div>
+                </div>
+    
+                <div class="product-card">
+                    <div class="product-image">
+                        <img src="https://i.gr-assets.com/images/S/compressed.photo.goodreads.com/books/1419934901l/24191446.jpg" alt="Product Image 2">
+                        <span class="discount-badge">-29%</span>
+                        <span class="featured-badge">FEATURED BOOKS</span>
+                    </div>
+                    <div class="product-info">
+                        <h3>Physics for engineers book</h3>
+                        <p class="category">BOOKS</p>
+                        <div class="rating">⭐⭐⭐⭐</div>
+                        <div class="price-info">
+                            <span class="current-price">₹250</span>
+                            <span class="original-price">₹350</span>
+                             <button class="buy-now-btn" onclick="buyNow()">BUY NOW</button>
+                        </div>
+                    </div>
+                </div>
+    
+                <div class="product-card">
+                    <div class="product-image">
+                        <img src="https://m.media-amazon.com/images/I/716o4Sy-tkL._SL1500_.jpg" alt="Product Image 3">
+                        <span class="discount-badge">-33%</span>
+                        <span class="featured-badge">FEATURED STATIONERY</span>
+                    </div>
+                    <div class="product-info">
+                        <h3>Sheet holder plus checked eg sheets</h3>
+                        <p class="category">STATIONERY</p>
+                        <div class="rating">⭐⭐⭐⭐</div>
+                        <div class="price-info">
+                            <span class="current-price">₹200</span>
+                            <span class="original-price">₹300</span>
+                             <button class="buy-now-btn" onclick="buyNow()">BUY NOW</button>
+                        </div>
+                    </div>
+                </div>
+            <div class="view-all-products">
+                <button class="view-all-btn" onclick="viewAllProducts()">View All →</button>
+            </div>    
+                </div>
+        </div>
+    </section>
+    <!-- Services Section -->
+    <section class="services-section">
+        <div class="container">
+            <div class="section-header">
+                <h2>Our Services</h2>
+                <p>Choose the service that fits your needs</p>
+            </div>
+            <div class="services-grid">
+                <div class="service-card">
+                    <div class="service-icon">🛍️</div>
+                    <h3>Buy</h3>
+                    <p>Discover amazing deals on textbooks, electronics, furniture, and more from verified students in your campus.</p>
+                    <ul class="service-features">
+                        <li>Verified sellers</li>
+                        <li>Secure payments</li>
+                        <li>Campus meetups</li>
+                    </ul>
+                    <button class="learn-more-btn" onclick="learnMore('buy')">Learn More →</button>
+                </div>
+                <div class="service-card">
+                    <div class="service-icon">💰</div>
+                    <h3>Sell</h3>
+                    <p>Turn your unused items into cash. List your products and connect with buyers in your campus community.</p>
+                    <ul class="service-features">
+                        <li>Easy listing</li>
+                        <li>Instant messaging</li>
+                        <li>No fees</li>
+                    </ul>
+                    <button class="learn-more-btn" onclick="learnMore('sell')">Learn More →</button>
+                </div>
+                <div class="service-card">
+                    <div class="service-icon">📄</div>
+                    <h3>Assignment</h3>
+                    <p>Get help with your assignments from top-performing students. Quality work at affordable prices.</p>
+                    <ul class="service-features">
+                        <li>Expert tutors</li>
+                        <li>On-time delivery</li>
+                        <li>Plagiarism-free</li>
+                    </ul>
+                    <button class="learn-more-btn" onclick="learnMore('assignment')">Learn More →</button>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Stats Section -->
+    <section class="stats-section">
+        <div class="container">
+            <div class="stats-header">
+                <h1 class="headline">Trusted by Students
+                
+                <span class="accent">Nationwide</span>
+                </h1>
+                <div class="underline" aria-hidden="true"></div>
+                <p class="sub">Join the largest student marketplace community and be part of something bigger</p>
+            </div>
+            <div class="stats-grid">
+                <div class="stat-card">
+                    <div class="stat-icon">👥</div>
+                    <div class="stat-number">1,600</div>
+                    <div class="stat-label">Registered Students</div>
+                    <div class="stat-description">Across 20+ colleges</div>
+                    <div class="stat-growth">📈 +25% this month</div>
+                </div>
+                <div class="stat-card">
+                    <div class="stat-icon">🛒</div>
+                    <div class="stat-number">150</div>
+                    <div class="stat-label">Items Sold</div>
+                    <div class="stat-description">This semester alone</div>
+                    <div class="stat-growth">📈 +40% growth</div>
+                </div>
+                <div class="stat-card">
+                    <div class="stat-icon">⭐</div>
+                    <div class="stat-number">4.6</div>
+                    <div class="stat-label">Average Rating</div>
+                    <div class="stat-description">From user reviews</div>
+                    <div class="stat-growth">🏆 Top rated platform</div>
+                </div>
+                <div class="stat-card">
+                    <div class="stat-icon">💰</div>
+                    <div class="stat-number">18,000</div>
+                    <div class="stat-label">Transactions</div>
+                    <div class="stat-description">By users</div>
+                    <div class="stat-growth">📈 ₹18,000+ value</div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Testimonials Section -->
+    <section class="conversations-section">
+        <div class="chat-icon"></div>
+        
+                <h1 class="section-title">Real Student Conversations</h1>
+                <p class="section-description">Authentic WhatsApp chats showing genuine student experiences on CampusMart</p>
+            </div>
+            <div class="conversation-cards-container">
+                <div class="conversation-card">
+                    <img src="wp1.jpg" alt="image1">
+                    </div>
+                    <div class="conversation-card">
+                        <img src="wp3.jpg" alt="image2">
+                        
+                        </div>
+                    </section>
+            
+    <!-- CTA Section -->
+    <section class="cta-section">
+        <div class="container">
+            <div class="cta-content">
+                <h2>Ready to Start Trading?</h2>
+                <p>Join your campus community today and discover a smarter way to buy and sell.</p>
+                <div class="cta-buttons">
+                    <button class="cta-btn primary" onclick="startBuying()">📦 Start Buying</button>
+                    <button class="cta-btn secondary" onclick="startSelling()">💼 Start Selling</button>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Features Section -->
+    <section class="features-section">
+        <div class="container">
+            <div class="features-grid">
+                <div class="feature-card">
+                    <div class="feature-icon">🎓</div>
+                    <h3>University Verified</h3>
+                    <p>Verifying college users at the campus level</p>
+                </div>
+                <div class="feature-card">
+                    <div class="feature-icon">👥</div>
+                    <h3>Campus Community</h3>
+                    <p>Trade only with verified students in your area</p>
+                </div>
+                <div class="feature-card">
+                    <div class="feature-icon">⚡</div>
+                    <h3>Instant Messaging</h3>
+                    <p>Connect with buyers and sellers instantly</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="footer">
+        <div class="container">
+            <div class="footer-content">
+                <div class="footer-section">
+                    <h3>CampusMart</h3>
+                    <p>Your trusted campus marketplace for buying, selling, and getting assignment help from verified students.</p>
+                   
+                </div>
+                <div class="footer-section">
+                    <h3>Services</h3>
+                    <ul>
+                        <li><a href="#" onclick="setActiveTab('buy')">Buy Items</a></li>
+                        <li><a href="#" onclick="setActiveTab('sell')">Sell Items</a></li>
+                        <li><a href="#" onclick="setActiveTab('assignment')">Assignment Help</a></li>
+                    </ul>
+                </div>
+                <div class="footer-section">
+                    <h3>Company</h3>
+                    <ul>
+                        <li><a href="#" onclick="showAbout()">About Us</a></li>
+                        
+                    </ul>
+                </div>
+                <div class="footer-section">
+                    <h3>Contact</h3>
+                    <p>📧 campusmart.store.mail@gmail.com</p>
+                    <p>📞 +91 87504 71736</p>
+                    <p>📍 Available in MAIT only</p>
+                   <div>
+                <a href="https://facebook.com" target="_blank">
+                  <i class="fab fa-facebook-f"></i>
+                </a>
+                <a href="https://twitter.com" target="_blank">
+                  <i class="fab fa-twitter"></i>
+                 </a>
+                 <a href="https://instagram.com" target="_blank">
+                  <i class="fab fa-instagram"></i>
+                   </a>
+                  <a href="https://linkedin.com" target="_blank">
+                   <i class="fab fa-linkedin-in"></i>
+                    </a>
+
+
+
+               </div>
+                </div>
+            </div>
+            <div class="footer-bottom">
+                <p>&copy; 2025 CampusMart. All rights reserved. | Privacy Policy | Terms of Service</p>
+            </div>
+        </div>
+    </footer>
+
+    <script src="script.js"></script>
+</body>
+</html>
